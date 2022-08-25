@@ -4,6 +4,7 @@ import { getDogs, getTemperaments } from "../../actions";
 
 import Card from "../Card/Card.jsx";
 import Paginado from "../Paginado/Paginado";
+import NavBar from "../NavBar/NavBar";
 
 import DogIcon from "../../assets/DogIcon.jpg";
 import "./Home.css";
@@ -38,6 +39,9 @@ function Home() {
   
   return (
     <>
+      <>
+        <NavBar pagina={setCurrentPage} set={setOrden}/>
+      </>
       <Paginado 
         dogsPerPage={dogsPerPage}
         allDogs={length}

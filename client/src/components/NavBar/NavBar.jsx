@@ -6,8 +6,6 @@ import menu from "../../assets/menu.svg";
 import icon from "../../assets/collar-de-perro.png";
 import { HiSearch } from "react-icons/hi";
 
-import FilterOrder from '../Filters&Order/FilterOrder'
-
 import './NavBar.css'
 
 function NavBar({ pagina, set }) {
@@ -15,9 +13,8 @@ function NavBar({ pagina, set }) {
   const [name, setName] = useState("");
 
   function handleClickAllDogs(e) {
-    e.preventDefault();
     pagina(1);
-    dispatch(getDogs(e.target.value));
+    dispatch(getDogs());
   }
 
   function handleInputChange(e) {
@@ -47,16 +44,16 @@ function NavBar({ pagina, set }) {
             src={icon}
             alt=""
             className="searchBar_icon"
-            onClick={(e) => handleClickAllDogs(e)}
+            onClick={() => handleClickAllDogs()}
           />
           <Link to="/create">
             <button className="searchBar_create">
-              <p className="searchBar_text">CREATE YOUR DOG</p>
+              <p className="searchBar_text">CREATE DOG</p>
             </button>
           </Link>
           <Link to="/create">
             <button className="searchBar_create searchBar_create-sm">
-              <p className="searchBar_text">CREATE</p>
+              <p className="searchBar_text"> CREATE </p>
             </button>
           </Link>
         </div>
@@ -72,7 +69,7 @@ function NavBar({ pagina, set }) {
               />
               <div className="searchBar_btn">
                 <button className="search_btn-submit">
-                  <HiSearch />
+                  <HiSearch size={23}/>
                 </button>
               </div>
             </form>
@@ -85,9 +82,6 @@ function NavBar({ pagina, set }) {
             alt="Not do found"
           ></img>
         </div>
-      </div>
-      <div className="filters-nav" id="filterId-nav">
-        <FilterOrder pagina={pagina} set={set} />
       </div>
     </nav>
   );
