@@ -1,0 +1,25 @@
+.pages_ctn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pages_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.pages_num{
+    margin: 0px 10px;
+}
+.icon_ctn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.icon{
+    margin: 5px 5px;
+}
