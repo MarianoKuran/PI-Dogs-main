@@ -16,6 +16,8 @@ const getApi = async () => {
       weight: response.weight.metric.split(" - "),
       temperament: response.temperament,
       image: response.image.url,
+      life_span: response.life_span,
+      origin: response.origin,
     };
   });
   return infoApi;
