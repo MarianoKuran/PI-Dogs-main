@@ -6,6 +6,8 @@ import menu from "../../assets/menu.svg";
 import HomeGif from "../../assets/HomeGif.gif";
 import { HiSearch } from "react-icons/hi";
 
+import Filters from '../Filters/Filters.jsx';
+
 import './NavBar.css'
 
 function NavBar({ pagina, set }) {
@@ -29,7 +31,7 @@ function NavBar({ pagina, set }) {
     setName("");
   }
 
-  function handleClick(e) {
+  function handleClick() {
     let app = document.getElementById("filterId-nav");
     if (app.classList.contains("filters-nav__inside"))
       app.classList.remove("filters-nav__inside");
@@ -82,6 +84,9 @@ function NavBar({ pagina, set }) {
             alt="Not do found"
           ></img>
         </div>
+      </div>
+      <div className="filters-nav" id="filterId-nav">
+        <Filters pagina={pagina} set={set} />
       </div>
     </nav>
   );

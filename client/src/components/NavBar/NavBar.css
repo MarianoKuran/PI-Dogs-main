@@ -7,7 +7,6 @@
 
 .searchBar-contenador-nav {
   position: relative;
-  z-index: 2;
   background-color: #e09f3e;
   display: flex;
   align-items: center;
@@ -105,7 +104,7 @@
   z-index: 1;
 }
 
-.filters-nav__inside .contenido-filters {
+.filters-nav__inside {
   transform: translateY(0);
 }
 
