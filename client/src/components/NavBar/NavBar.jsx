@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getDogs, getName } from "../../actions/index.js";
 import menu from "../../assets/menu.svg";
-import icon from "../../assets/collar-de-perro.png";
+import HomeGif from "../../assets/HomeGif.gif";
 import { HiSearch } from "react-icons/hi";
 
 import './NavBar.css'
@@ -12,7 +12,7 @@ function NavBar({ pagina, set }) {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
 
-  function handleClickAllDogs(e) {
+  function handleClickAllDogs() {
     pagina(1);
     dispatch(getDogs());
   }
@@ -41,7 +41,7 @@ function NavBar({ pagina, set }) {
       <div className="searchBar-contenador-nav">
         <div className="searchBar-logo">
           <img
-            src={icon}
+            src={HomeGif}
             alt=""
             className="searchBar_icon"
             onClick={() => handleClickAllDogs()}
