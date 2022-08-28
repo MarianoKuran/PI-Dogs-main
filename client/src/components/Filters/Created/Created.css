@@ -1,0 +1,87 @@
+.filter_links {
+  height: 100%;
+  transition: transfrom 0.5s;
+  display: flex;
+  user-select: none;
+}
+
+.filter_item {
+  list-style: none;
+  position: relative;
+  height: 100%;
+  --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+  --transform: rotate(-90deg);
+}
+
+.filter_item:hover {
+  --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  --transform: rotate(0);
+}
+
+.filter_link {
+  background-color: transparent;
+  border: none;
+  width: 150px;
+  color: #1c0d02;
+  text-decoration: none;
+  padding: 0 30px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.filter_link:hover {
+  background-color: #e09f3e96;
+}
+
+.filter_arrow {
+  margin: 0;
+  transform: var(--transform);
+  transition: transform 0.2s;
+  display: block;
+  margin-left: 3px;
+  width: 36px;
+  height: 36px;
+}
+
+.filter_nesting {
+  list-style: none;
+  transition: clip-path 0.3s;
+  clip-path: var(--clip);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  transform: translateY(100%);
+  background-color: #fff3b0;
+}
+
+.filter_link--inside {
+  padding: 10px 5px;
+  height: 50px;
+}
+
+.filter_link--inside:hover {
+  background-color: #e09f3e96;
+}
+
+.filter_hamburguer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  display: none;
+}
+
+.filter_img {
+  display: block;
+  width: 36px;
+}
+
+@media (max-width: 600px) {
+  .filter_link {
+    width: 100%;
+    padding: 0;
+  }
+}

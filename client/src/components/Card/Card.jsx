@@ -9,7 +9,7 @@ function Card({ name, image, temperament, weight, id }) {
         <div className="card_ctn-img">
           <img
             src={image}
-            alt={`Image of a ${name}`}
+            alt={`Pic of a ${name}`}
             className="card_img"
             width="200px"
             height="250px"

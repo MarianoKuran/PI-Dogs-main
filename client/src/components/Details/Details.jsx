@@ -8,7 +8,6 @@ import { AiOutlineHeart, AiFillHome } from "react-icons/ai";
 import { MdOutlineAddReaction } from "react-icons/md";
 import { VscSymbolRuler } from "react-icons/vsc";
 
-import icon from "../../assets/collar-de-perro.png";
 import "./Details.css";
 
 function Details(props) {

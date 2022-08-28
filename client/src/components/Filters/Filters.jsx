@@ -1,16 +1,22 @@
 import React from "react";
-import Alfhabetic from "./Alfhabetic/Alfhabetic";
+import Order from "./Order/Order";
+import ByTemperament from "./ByTemperament/ByTemperament";
 
 import './Filters.css'
+import Created from "./Created/Created";
 
 function Filters({ pagina, set }) {
   return (
       <div className="container_filters">
         <div className="filters">
-          <Alfhabetic pagina={pagina} set={set} />
+          <Order pagina={pagina} set={set} />
         </div>
-        <div className="filters"></div>
-        <div className="filters"></div>
+        <div className="filters">
+          <ByTemperament pagina={pagina}/>
+        </div>
+        <div className="filters">
+          <Created />
+        </div>
       </div>
   );
 }

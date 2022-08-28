@@ -51,14 +51,14 @@ export default function rootReducer(state = initialState, action) {
         dogs: statusFilter,
       };
     case FILTER_CREATED:
-      const allFilter = state.filter;
+      const allDogs = state.dogs;
       const createFilter =
-        action.payload === "created" // esto me llegaria desde la base de datos en caso de que sea creado 
-          ? allFilter.filter((dog) => dog.createInDb)
-          : allFilter.filter((dog) => !dog.createInDb);
+        action.payload === "created" 
+          ? allDogs.filter((dog) => dog.createInDb)
+          : allDogs.filter((dog) => !dog.createInDb);
       return {
         ...state,
-        dogs: action.payload === "allDogs" ? allFilter : createFilter,
+        dogs: createFilter,
       };
     case ORDER_AS:
       const sortOrder =

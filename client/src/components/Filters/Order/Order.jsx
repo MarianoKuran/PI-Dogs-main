@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { orderAs, orderWeight } from "../../../actions/index.js";
 import arrow from "../../../assets/arrow.svg";
 
-import "./Alfhabetic.css";
+import "./Order.css";
 
-function Alfhabetic({ pagina, set }) {
+function Order({ pagina, set }) {
   const dispatch = useDispatch();
 
   function handleOrder(e) {
@@ -79,4 +79,4 @@ function Alfhabetic({ pagina, set }) {
   );
 }
 
-export default Alfhabetic;
+export default Order;
