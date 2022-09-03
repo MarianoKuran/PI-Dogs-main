@@ -5,10 +5,11 @@ import arrow from "../../../assets/arrow.svg";
 
 import "./Created.css";
 
-function Created() {
+function Created({pagina}) {
   const dispatch = useDispatch();
 
   function handleFilter(e) {
+    pagina(1);
     dispatch(filterCreated(e.target.name));
   }
   function handleClick() {

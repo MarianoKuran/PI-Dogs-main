@@ -1,6 +1,7 @@
 import React from "react";
 import { CgArrowLeftO, CgArrowRightO } from "react-icons/cg";
 import '../Paginado/Paginado.css'
+import loading from '../../assets/comida-de-perro.gif'
 
 //alldogs: cantidad de perros en el estado = alldogs.length
 //dogsPerPage: cantidad de perros por pagina = 8 perros aunque al ser un estado puede variar el numero
@@ -26,29 +27,39 @@ function Paginado({ dogsPerPage, allDogs, paginado, currentPage }) {
   }
 
   return (
-    <div className="pages_ctn">
-      <div className="icon_ctn">
-        <CgArrowLeftO
-          onClick={(e) => handleBack(e)}
-          className="icon"
-          size={50}
-        />
+    <>
+      { currentPage && totalPages ? (
+        <div className="pages_ctn">
+        <div className="icon_ctn">
+          <CgArrowLeftO
+            onClick={(e) => handleBack(e)}
+            className="icon"
+            size={50}
+          />
+        </div>
+  
+        <div className="pages_info">
+          <span className="pages_num">{currentPage}</span>
+          <p className="of"> of </p>
+          <span className="pages_num">{totalPages}</span>
+        </div>
+  
+        <div className="icon_ctn">
+          <CgArrowRightO
+            onClick={(e) => handleNext(e)}
+            className="icon"
+            size={50}
+          />
+        </div>
       </div>
-
-      <div className="pages_info">
-        <span className="pages_num">{currentPage}</span>
-        <p className="of"> of </p>
-        <span className="pages_num">{totalPages}</span>
-      </div>
-
-      <div className="icon_ctn">
-        <CgArrowRightO
-          onClick={(e) => handleNext(e)}
-          className="icon"
-          size={50}
-        />
-      </div>
-    </div>
+      ) : (
+        <>
+          <div className="loading">
+            <img src={loading} alt="loading" />
+          </div>
+        </>
+      )}
+    </>
   );
 }
 

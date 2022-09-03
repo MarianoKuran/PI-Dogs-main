@@ -10,9 +10,9 @@ function LandingPage() {
       <section className='grid'>
         <div className='grid__texts'>
           <h2 className='grid__title'> Welcome to</h2>
-          <h2 className='grid__title title--transform'> WikiDogs 🐾​</h2>
+          <h2 className='grid__title title--transform'> WikiDogs ​</h2>
           <Link className='link-btn' to='/home'>
-            <CgEnter size={50} className='icon' />
+            <CgEnter size={50} className='lnd_icon' />
             <span className="spn-lnd">Let's Go!</span>
           </Link>
         </div>

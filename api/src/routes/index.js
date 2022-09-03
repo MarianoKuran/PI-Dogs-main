@@ -106,6 +106,7 @@ router.post(`/dogs`, async (req, res, next) => {
   try {
     let {
       name,
+      origin,
       life_span,
       height_min,
       height_max,
@@ -118,6 +119,7 @@ router.post(`/dogs`, async (req, res, next) => {
     } = req.body;
     const createDog = await Dog.create({
       name,
+      origin,
       life_span,
       height_min,
       height_max,

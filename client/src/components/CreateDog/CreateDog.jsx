@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createDog, getTemperaments } from "../../actions/index.js";
 
-import { AiFillHome } from "react-icons/ai";
+import home from '../../assets/casa-de-perro.gif'
 import "./CreateDog.css";
 
 function validate(form) {
@@ -15,6 +15,8 @@ function validate(form) {
     error.name = "Too long. Choose a simpler name.";
   } else if (!isNaN(parseInt(form.name))) {
     error.name = "Name must not be a number.";
+  } else if (!isNaN(parseInt(form.origin))) {
+    error.origin = "Origin must not be a number.";
   } else if (!form.height_min) {
     error.height_min = "Minimum height is required.";
   } else if (isNaN(parseInt(form.height_min))) {
@@ -43,14 +45,14 @@ function validate(form) {
     error.weight_max = "Maximum weight should be higher than minimum weight.";
   } else if (form.weight_max > 200) {
     error.weight_max = "Weight must be less than 200.";
-  } else if (!form.life_span) {
-    error.life_span = "Life span is required.";
-  } else if (isNaN(parseInt(form.life_span))) {
-    error.life_span = "Life span should be a number.";
-  } else if (form.life_span > 50) {
-    error.life_span = "Saddly, :( dogs don't live that long.";
-  } else if (form.life_span <= 0) {
-    error.life_span = "You don't want your dog to live?";
+  } else if (!form.age) {
+    error.age = "Life span is required.";
+  } else if (isNaN(parseInt(form.age))) {
+    error.age = "Life span should be a number.";
+  } else if (form.age > 50) {
+    error.age = "Saddly, :( dogs don't live that long.";
+  } else if (form.age <= 0) {
+    error.age = "You don't want your dog to live?";
   }
   return error;
 }
@@ -62,7 +64,7 @@ function CreateDog() {
   const [error, setError] = useState({}); //errores que iran apareciendo segun las condiciones de validacion del form
   const [form, setForm] = useState({
     name: "",
-    life_span: "",
+    age: "",
     height_min: "",
     height_max: "",
     weight_min: "",
@@ -107,13 +109,13 @@ function CreateDog() {
       form.height_max &&
       form.weight_min &&
       form.weight_max &&
-      form.life_span
+      form.age
     ) {
       dispatch(createDog(form));
       alert("Dog created successfully👏");
       setForm({
         name: "",
-        life_span: "",
+        age: "",
         height_min: "",
         height_max: "",
         weight_min: "",
@@ -129,9 +131,10 @@ function CreateDog() {
   }
 
   function deleteTemperament(e) {
+    console.log(e);
     setForm({
       ...form,
-      temperament: form.temperament.filter((d) => d !== e.target.value),
+      temperament: form.temperament.filter((d) => d !== e),
     });
   }
 
@@ -139,7 +142,7 @@ function CreateDog() {
     <>
       <nav className="detail_nav">
         <Link to="/home" className="details_links--home">
-          <AiFillHome size={30} />
+          <img src={home} alt="icon" className="details-nav_icon" />
           <p> Back To Home </p>
         </Link>
       </nav>
@@ -159,6 +162,22 @@ function CreateDog() {
             {error.name && (
               <p className="create_error">
                 <strong>{error.name}</strong>
+              </p>
+            )}
+          </div>
+          <div className="create_items">
+            <label className="create_label">🐾 Origin 🐾</label>
+            <input
+              type="textarea"
+              value={form.origin}
+              placeholder=" Origin"
+              name="origin"
+              onChange={handleChange}
+              className="create_input"
+            />
+            {error.origin && (
+              <p className="create_error">
+                <strong>{error.origin}</strong>
               </p>
             )}
           </div>
@@ -222,14 +241,14 @@ function CreateDog() {
             <label className="create_label">🐾 Life span 🐾</label>
             <input
               type="text"
-              value={form.life_span}
+              value={form.age}
               placeholder="Life span"
-              name="life_span"
+              name="age"
               onChange={handleChange}
               className="create_input"
             />
-            {error.life_span && (
-              <p className="create_error"> {error.life_span} </p>
+            {error.age && (
+              <p className="create_error"> {error.age} </p>
             )}
           </div>
           <div className="create_items">
@@ -261,24 +280,21 @@ function CreateDog() {
             </select>
             <div className="create_temperament">
               {form.temperament.map((e, i) => (
-                <p>
+                <p key={i}>
                   {e}
-                  <button
+                  <span
                     className="create_delete"
-                    key={i}
-                    value={e}
-                    onClick={(e) => deleteTemperament(e)}
+                    onClick={() => deleteTemperament(e)}
                   >
                     x
-                  </button>
+                  </span>
                 </p>
               ))}
             </div>
           </div>
           <button
             type="submit"
-            onSubmit={(e) => handleSubmit(e)}
-            className="create_link create_create"
+            className="create_link"
           >
             CREATE
           </button>

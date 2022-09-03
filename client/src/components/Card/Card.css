@@ -4,15 +4,10 @@
   margin: 20px 20px;
   border-radius: 5px;
   overflow: hidden;
-/*   box-shadow: 10px 10px 10px 5px rgb(0, 0, 0);
- */}
+}
 .a_card{
-  /* display: flex;
-  flex-direction: column;
-  height: 350px;
-  width: 350px; */
   text-decoration: none;
-  color: black;
+  color: #000;
   cursor: pointer;
 }
 .card_ctn-img{
@@ -31,7 +26,7 @@
   left: 0;
   width: 100%;
   height: min-content;
-  background-color: #e09f3ed8;
+  background-color: #cefafd;
   transition: 0.8s all ease;
   transform: translateY(-40px);
 }
@@ -57,7 +52,7 @@
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: #e09f3e;
+  background: #cefafd;
   transform: scaleX(0);
   transition: transform 0.6s ease-in-out;
 }
@@ -78,5 +73,5 @@
   border-radius: 5px;
   color: #fff;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
-  background-color: #7e500a;
+  background-color: #26ccd8;
 }

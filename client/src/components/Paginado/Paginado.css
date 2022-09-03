@@ -12,13 +12,13 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    color: #dba657;
+    color: #26ccd8;
     font-family: 'Lato', serif;
     font-weight: bold;
 }
 .pages_num{
     margin: 0px 10px;
-    color: #dba657;
+    color: #26ccd8;
     font-family: 'Lato', serif;
     font-weight: bold;
 }
@@ -29,14 +29,26 @@
     height: 100%;
 }
 .icon{
-    color: #dba657;
+    color: #26ccd8;
     margin: 5px 5px;
     cursor: pointer;
     padding-left: 5px;
+    border-radius: 50px;
+    transition: .3s;
 }
 
 .icon:hover{
-    background-color: #dba657;
-    color: #1c0d02;
-    border-radius: 50px;
+    background-color: #26ccd8;
+    color: #fff;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.loading img{
+    height: 50%;
+    width: 30%;
 }

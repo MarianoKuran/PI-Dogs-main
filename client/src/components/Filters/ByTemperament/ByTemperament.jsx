@@ -10,7 +10,6 @@ function ByTemperament({ pagina }) {
   const dispatch = useDispatch();
 
   function handleStatus(e) {
-    e.preventDefault();
     pagina(1);
     dispatch(filterTemperament(e.target.name));
   }

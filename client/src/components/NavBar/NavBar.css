@@ -7,7 +7,7 @@
 
 .searchBar-contenador-nav {
   position: relative;
-  background-color: #e09f3e;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,13 +40,13 @@
 
 .searchBar_create::after {
   content: "";
-  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  box-shadow: 2px 2px 5px #26ccd8;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: #000;
+  background: #26ccd8;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
@@ -59,8 +59,8 @@
   width: 1px;
   height: 35px;
   margin-left: 3px;
-  background: #000;
-  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  background: #26ccd8;
+  box-shadow: 2px 2px 5px #26ccd8;
   right: 0;
   transform: scaleY(0);
   transition: transform 0.3s ease-in-out;
@@ -74,7 +74,7 @@
   font-family: "Dongle", sans-serif;
   font-size: 25px;
   font-weight: 700;
-  color: #1c0d02;
+  color: #000;
 }
 
 .searchBar-logo {
@@ -111,7 +111,6 @@
 .searchBar_search {
   position: relative;
   padding: 5px;
-  filter: drop-shadow(2px 2px 5px rgb(0, 0, 0));
 }
 
 .searchBar_search input {
@@ -124,14 +123,14 @@
   border: 1px solid #fff;
   border-radius: 30px;
   transition: all 0.6s ease;
-  background-color: #fff3b0;
+  background-color: #cefafd;
 }
 
 .searchBar_btn {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #311704;
+  background-color: #26ccd8;
   width: 43px;
   font-size: 25px;
   border-radius: 50%;

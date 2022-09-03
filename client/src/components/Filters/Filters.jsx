@@ -15,7 +15,7 @@ function Filters({ pagina, set }) {
           <ByTemperament pagina={pagina}/>
         </div>
         <div className="filters">
-          <Created />
+          <Created pagina={pagina}/>
         </div>
       </div>
   );

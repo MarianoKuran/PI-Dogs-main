@@ -22,7 +22,7 @@
   background-color: transparent;
   border: none;
   width: 150px;
-  color: #1c0d02;
+  color: #000;
   text-decoration: none;
   padding: 0 30px;
   display: flex;
@@ -31,7 +31,7 @@
 }
 
 .filter_link:hover {
-  background-color: #e09f3e96;
+  background-color: #aef8fd;
 }
 
 .filter_arrow {
@@ -53,7 +53,7 @@
   right: 0;
   width: 150px;
   transform: translateY(100%);
-  background-color: #fff3b0;
+  background-color: #cefafd;
 }
 
 .filter_link--inside {
@@ -62,7 +62,7 @@
 }
 
 .filter_link--inside:hover {
-  background-color: #e09f3e96;
+  background-color: #26ccd8;
 }
 
 .filter_hamburguer {

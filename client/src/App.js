@@ -5,7 +5,6 @@ import Home from "./components/Home/Home.jsx";
 import Details from './components/Details/Details';
 import CreateDog from './components/CreateDog/CreateDog.jsx';
 
-
 function App() {
   return (
     <BrowserRouter>
