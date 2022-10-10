@@ -16,7 +16,7 @@ const {
 
 export function getDogs() {
   return async function (dispatch) {
-    let dogs = await axios.get(`https://${PGHOST}:${PGPORT}/dogs`);
+    let dogs = await axios.get(`http://${PGHOST}:${PGPORT}/dogs`);
     dispatch({
       type: GET_DOGS,
       payload: dogs.data,
@@ -25,7 +25,7 @@ export function getDogs() {
 }
 export function getTemperaments() {
   return async function (dispatch) {
-    let temperaments = await axios.get(`https://${PGHOST}:${PGPORT}/temperament`);
+    let temperaments = await axios.get(`http://${PGHOST}:${PGPORT}/temperament`);
     dispatch({
       type: GET_TEMPERAMENTS,
       payload: temperaments.data,
@@ -49,7 +49,7 @@ export function filterCreated(payload) {
 
 export function createDog(payload) {
   return async function (dispatch) {
-    var response = await axios.post(`https://${PGHOST}:${PGPORT}/dogs`, payload);
+    var response = await axios.post(`http://${PGHOST}:${PGPORT}/dogs`, payload);
     return response;
   };
 }
@@ -71,7 +71,7 @@ export function orderWeight(payload) {
 export function getName(name) {
   return async function (dispatch) {
     try {
-      const json = await axios.get(`https://${PGHOST}:${PGPORT}/dogs?name=` + name);
+      const json = await axios.get(`http://${PGHOST}:${PGPORT}/dogs?name=` + name);
       return dispatch({
         type: GET_NAME,
         payload: json.data,
@@ -84,7 +84,7 @@ export function getName(name) {
 
 export function getDetails(id) {
   return async function (dispatch) {
-    const json = await axios.get(`https://${PGHOST}:${PGPORT}/dogs/` + id);
+    const json = await axios.get(`http://${PGHOST}:${PGPORT}/dogs/` + id);
     dispatch({
       type: GET_DETAILS,
       payload: json.data,
