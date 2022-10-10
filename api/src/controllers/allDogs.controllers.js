@@ -1,4 +1,4 @@
-const API_KEY = process.env;
+const { API_KEY } = process.env;
 const axios = require('axios')
 const endpoint = `https://api.thedogapi.com/v1/breeds?api_key=`
 const {Temperament, Dog} = require('../db')
@@ -6,7 +6,7 @@ const {Temperament, Dog} = require('../db')
 /* funcion que llama a la api y se guarada los datos necesarios de los perros en infoApi */
 const getApi = async () => {
   const getApi = await axios.get(
-    `${endpoint}4f36f783-1021-4034-8155-b0635db201a1`
+    `${endpoint}${API_KEY}`
   );
   const infoApi = getApi.data.map((response) => {
     return {
