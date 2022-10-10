@@ -6,8 +6,7 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST, PGDATABASE, PGHOST, PGPORT
 } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER || PGUSER
-}:${DB_PASSWORD || PGPASSWORD}@${DB_HOST || PGHOST}:${PGPORT || "3001"}/${PGDATABASE || "dogs"}`, {
+const sequelize = new Sequelize(`postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
