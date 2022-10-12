@@ -11,12 +11,12 @@ export const FILTER_CREATED = "FILTER_CREATED";
 export const ORDER_WEIGHT = "ORDER_WEIGHT";
 export const ORDER_AS = "ORDER_AS";
 const {
-  PGHOST, PGPORT,
+  REACT_APP_API_URL 
 } = process.env;
 
 export function getDogs() {
   return async function (dispatch) {
-    let dogs = await axios.get(`http://${PGHOST}:${PGPORT}/dogs`);
+    let dogs = await axios.get(`${REACT_APP_API_URL}/dogs`);
     dispatch({
       type: GET_DOGS,
       payload: dogs.data,
@@ -25,7 +25,7 @@ export function getDogs() {
 }
 export function getTemperaments() {
   return async function (dispatch) {
-    let temperaments = await axios.get(`http://${PGHOST}:${PGPORT}/temperament`);
+    let temperaments = await axios.get(`${REACT_APP_API_URL}/temperament`);
     dispatch({
       type: GET_TEMPERAMENTS,
       payload: temperaments.data,
@@ -49,7 +49,7 @@ export function filterCreated(payload) {
 
 export function createDog(payload) {
   return async function (dispatch) {
-    var response = await axios.post(`http://${PGHOST}:${PGPORT}/dogs`, payload);
+    var response = await axios.post(`${REACT_APP_API_URL}/dogs`, payload);
     return response;
   };
 }
@@ -71,7 +71,7 @@ export function orderWeight(payload) {
 export function getName(name) {
   return async function (dispatch) {
     try {
-      const json = await axios.get(`http://${PGHOST}:${PGPORT}/dogs?name=` + name);
+      const json = await axios.get(`${REACT_APP_API_URL}/dogs?name=` + name);
       return dispatch({
         type: GET_NAME,
         payload: json.data,
@@ -84,7 +84,7 @@ export function getName(name) {
 
 export function getDetails(id) {
   return async function (dispatch) {
-    const json = await axios.get(`http://${PGHOST}:${PGPORT}/dogs/` + id);
+    const json = await axios.get(`${REACT_APP_API_URL}/dogs/` + id);
     dispatch({
       type: GET_DETAILS,
       payload: json.data,
