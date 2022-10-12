@@ -1,6 +1,6 @@
-const { API_KEY } = process.env;
 const axios = require('axios')
 const endpoint = `https://api.thedogapi.com/v1/breeds?api_key=`
+const API_KEY = `4f36f783-1021-4034-8155-b0635db201a1`
 const {Temperament, Dog} = require('../db')
 
 /* funcion que llama a la api y se guarada los datos necesarios de los perros en infoApi */
